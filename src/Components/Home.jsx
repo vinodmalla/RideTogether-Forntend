@@ -26,7 +26,7 @@ function Home() {
   },[username]);
 
   const createRoom = async() => {
-   const data=await axios.post(`${import.meta.env.VITE_BACKEND_URL}/createroom`,{roomID:uniqueID,adminUserID:username+randomString,username:username});
+   const data=await axios.post("https://ridetogether-backend.onrender.com/createroom",{roomID:uniqueID,adminUserID:username+randomString,username:username});
    console.log(data)
     
   }

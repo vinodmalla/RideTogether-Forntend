@@ -93,7 +93,7 @@ const userID = localStorage.getItem('userID'); // Retrieve the userID from local
       const data=await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${toLocation}&key=${import.meta.env.VITE_API_KEY_FOR_MAP_SERVICE2}`)
       localStorage.setItem('toLocation',toLocation)
     
-      const setdata=await axios.post('http://localhost:5000/set-destination',{roomID:roomID,destination:data.data.results[0].geometry.location})
+      const setdata=await axios.post('https://ridetogether-backend.onrender.com/set-destination',{roomID:roomID,destination:data.data.results[0].geometry.location})
       console.log(setdata)
     }
     
